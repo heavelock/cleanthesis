@@ -92,6 +92,11 @@
 \define@choicekey*[ct]{cthesis}{bibstyle}[\val\bibstylenr]{alphabetic,numeric,authoryear,apa}[alphabetic]{\def\cthesis@bibstyle{#1}}
 \setkeys[ct]{cthesis}{bibstyle=alphabetic}
 
+% OPTION bibdoi
+% --> values = true|false
+\define@choicekey*[ct]{cthesis}{bibdoi}[\val\bibsysnr]{true,false}[false]{\def\cthesis@bibdoi{#1}}
+\setkeys[ct]{cthesis}{bibdoi=false}
+
 % OPTION wrapfooter
 % --> values = true|false
 \define@boolkey[ct]{cthesis}{wrapfooter}[false]{}
@@ -289,7 +294,7 @@
 	backref=true,					% 	- activate backrefs
 	isbn=false,						% 	- don't show isbn tags
 	url=false,						% 	- don't show url tags
-	doi=false,						% 	- don't show doi tags
+	doi=\cthesis@bibdoi,			% 	- show or don't show doi tags
 	urldate=long,					% 	- display type for dates
 	maxnames=3,%
 	minnames=1,%
